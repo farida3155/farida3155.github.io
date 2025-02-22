@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52EDB1F12D6A719C005BC1E3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52EDB1F02D6A719C005BC1E3 /* main.cpp */; };
+		52EDB1F12D6A719C005BC1E3 /* BackEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52EDB1F02D6A719C005BC1E3 /* BackEnd.cpp */; };
+		52EDB1FA2D6A7253005BC1E3 /* Function Implementations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52EDB1F82D6A7253005BC1E3 /* Function Implementations.cpp */; };
+		52EDB1FD2D6A729F005BC1E3 /* FrontEnd (GUI).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52EDB1FB2D6A729F005BC1E3 /* FrontEnd (GUI).cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +26,12 @@
 
 /* Begin PBXFileReference section */
 		52EDB1ED2D6A719C005BC1E3 /* Maze Game (SFML) */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Maze Game (SFML)"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52EDB1F02D6A719C005BC1E3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		52EDB1F02D6A719C005BC1E3 /* BackEnd.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BackEnd.cpp; sourceTree = "<group>"; };
+		52EDB1F72D6A7209005BC1E3 /* mymaze.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mymaze.h; sourceTree = "<group>"; };
+		52EDB1F82D6A7253005BC1E3 /* Function Implementations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Function Implementations.cpp"; sourceTree = "<group>"; };
+		52EDB1F92D6A7253005BC1E3 /* Function Implementations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "Function Implementations.hpp"; sourceTree = "<group>"; };
+		52EDB1FB2D6A729F005BC1E3 /* FrontEnd (GUI).cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "FrontEnd (GUI).cpp"; sourceTree = "<group>"; };
+		52EDB1FC2D6A729F005BC1E3 /* FrontEnd (GUI).hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "FrontEnd (GUI).hpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +48,10 @@
 		52EDB1E42D6A719C005BC1E3 = {
 			isa = PBXGroup;
 			children = (
+				52EDB1FB2D6A729F005BC1E3 /* FrontEnd (GUI).cpp */,
+				52EDB1FC2D6A729F005BC1E3 /* FrontEnd (GUI).hpp */,
+				52EDB1F82D6A7253005BC1E3 /* Function Implementations.cpp */,
+				52EDB1F92D6A7253005BC1E3 /* Function Implementations.hpp */,
 				52EDB1EF2D6A719C005BC1E3 /* Maze Game (SFML) */,
 				52EDB1EE2D6A719C005BC1E3 /* Products */,
 			);
@@ -57,7 +68,8 @@
 		52EDB1EF2D6A719C005BC1E3 /* Maze Game (SFML) */ = {
 			isa = PBXGroup;
 			children = (
-				52EDB1F02D6A719C005BC1E3 /* main.cpp */,
+				52EDB1F02D6A719C005BC1E3 /* BackEnd.cpp */,
+				52EDB1F72D6A7209005BC1E3 /* mymaze.h */,
 			);
 			path = "Maze Game (SFML)";
 			sourceTree = "<group>";
@@ -119,7 +131,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52EDB1F12D6A719C005BC1E3 /* main.cpp in Sources */,
+				52EDB1FA2D6A7253005BC1E3 /* Function Implementations.cpp in Sources */,
+				52EDB1FD2D6A729F005BC1E3 /* FrontEnd (GUI).cpp in Sources */,
+				52EDB1F12D6A719C005BC1E3 /* BackEnd.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
