@@ -1,0 +1,268 @@
+/**
+ * Calm decorative layer: soft gradients, SVG clouds, floating 3D-style orbs.
+ * Non-interactive; respects prefers-reduced-motion.
+ */
+
+.has-wellness-scene .site-header,
+.has-wellness-scene .layout-shell,
+.has-wellness-scene .site-footer {
+    position: relative;
+    z-index: 1;
+}
+
+.wellness-scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.wellness-scene__gradient {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(
+            circle at 18% 18%,
+            rgba(255, 255, 255, 0.42) 0%,
+            transparent 42%
+        ),
+        radial-gradient(circle at 82% 12%, rgba(186, 230, 253, 0.28) 0%, transparent 38%),
+        radial-gradient(circle at 58% 78%, rgba(209, 193, 242, 0.4) 0%, transparent 48%);
+    opacity: 0.95;
+}
+
+.wellness-scene__breath {
+    position: absolute;
+    inset: 14% 12%;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.32) 0%,
+        rgba(231, 221, 255, 0) 64%
+    );
+    filter: blur(6px);
+    animation: wellness-scene-breath 15s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+.wellness-clouds {
+    position: absolute;
+    width: 110%;
+    min-width: 720px;
+    left: -5%;
+    top: 2%;
+    opacity: 0.72;
+    max-height: 42vh;
+}
+
+.wellness-clouds__back {
+    animation: wellness-cloud-drift-a 78s ease-in-out infinite;
+}
+
+.wellness-clouds__front {
+    animation: wellness-cloud-drift-b 105s ease-in-out infinite;
+}
+
+.wellness-orbits {
+    position: absolute;
+    inset: 0;
+}
+
+.wellness-orb-wrap {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform;
+    contain: layout style paint;
+}
+
+.wellness-orb-wrap--lavender {
+    top: 11%;
+    left: 3%;
+    animation: wellness-float-a 19s ease-in-out infinite;
+}
+
+.wellness-orb-wrap--blush {
+    top: 36%;
+    right: 8%;
+    animation: wellness-float-c 17s ease-in-out infinite;
+}
+
+.wellness-orb-wrap--blob-a {
+    bottom: 6%;
+    left: 12%;
+    animation: wellness-float-d 21s ease-in-out infinite;
+}
+
+.wellness-orb-wrap--blob-b {
+    top: 48%;
+    left: 1%;
+    animation: wellness-float-a 25s ease-in-out infinite;
+}
+
+.wellness-orb {
+    display: block;
+    filter: drop-shadow(0 18px 28px rgba(80, 60, 120, 0.14));
+    transform-style: preserve-3d;
+}
+
+.wellness-sphere {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.82), transparent 44%),
+        var(--wellness-sphere-tone, #d1c1f2);
+}
+
+.wellness-sphere--lg {
+    width: clamp(56px, 9vw, 100px);
+    height: clamp(56px, 9vw, 100px);
+}
+
+.wellness-sphere--sm {
+    width: clamp(34px, 5.5vw, 56px);
+    height: clamp(34px, 5.5vw, 56px);
+}
+
+.wellness-sphere--lavender {
+    --wellness-sphere-tone: linear-gradient(145deg, #e8ddff, #c4b2ea);
+    animation: wellness-slow-rotate 52s linear infinite;
+}
+
+.wellness-sphere--blush {
+    --wellness-sphere-tone: linear-gradient(160deg, #ffe8f2, #f3c3d8);
+}
+
+.wellness-blob {
+    border-radius: 42% 58% 61% 39% / 44% 36% 64% 56%;
+    opacity: 0.78;
+    background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.72), transparent 48%),
+        linear-gradient(140deg, rgba(186, 230, 253, 0.75), rgba(209, 193, 242, 0.68));
+}
+
+.wellness-blob--a {
+    width: clamp(72px, 14vw, 130px);
+    height: clamp(68px, 13vw, 118px);
+    animation: wellness-blob-morph-a 28s ease-in-out infinite;
+}
+
+.wellness-blob--b {
+    width: clamp(58px, 11vw, 98px);
+    height: clamp(54px, 10vw, 92px);
+    animation: wellness-blob-morph-b 32s ease-in-out infinite;
+}
+
+@keyframes wellness-scene-breath {
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.38;
+    }
+    50% {
+        transform: scale(1.04);
+        opacity: 0.68;
+    }
+}
+
+@keyframes wellness-cloud-drift-a {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-18px);
+    }
+}
+
+@keyframes wellness-cloud-drift-b {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(14px);
+    }
+}
+
+@keyframes wellness-float-a {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(10px, -14px, 0);
+    }
+}
+
+@keyframes wellness-float-b {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-12px, 12px, 0);
+    }
+}
+
+@keyframes wellness-float-c {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(6px, 8px, 0) scale(1.03);
+    }
+}
+
+@keyframes wellness-float-d {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(-8px, -10px, 0);
+    }
+}
+
+@keyframes wellness-slow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wellness-blob-morph-a {
+    0%,
+    100% {
+        border-radius: 42% 58% 61% 39% / 44% 36% 64% 56%;
+    }
+    50% {
+        border-radius: 58% 42% 39% 61% / 56% 44% 36% 64%;
+    }
+}
+
+@keyframes wellness-blob-morph-b {
+    0%,
+    100% {
+        border-radius: 55% 45% 48% 52% / 52% 48% 52% 48%;
+    }
+    50% {
+        border-radius: 45% 55% 62% 38% / 40% 60% 40% 60%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wellness-scene__breath,
+    .wellness-clouds__back,
+    .wellness-clouds__front,
+    .wellness-orb-wrap,
+    .wellness-sphere--lavender,
+    .wellness-blob--a,
+    .wellness-blob--b {
+        animation: none !important;
+    }
+
+    .wellness-scene__breath {
+        opacity: 0.48;
+        transform: none;
+    }
+}

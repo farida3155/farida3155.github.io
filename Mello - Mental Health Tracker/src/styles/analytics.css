@@ -1,0 +1,209 @@
+/* Analytics Premium Styles */
+
+.analytics-page {
+  /* Inherits dashboard layout styles */
+}
+
+.analytics-page .content-area {
+  padding: 3rem 4vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.analytics-page .top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.analytics-page .top-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.analytics-page .top-header p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.week-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: white;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  color: var(--color-primary);
+}
+
+/* Metric Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  background: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.panel-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Chart Panels */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.chart-panel {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.panel-header h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.panel-tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.chart-container {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Buddy Banner */
+.buddy-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, #EBE5F7 100%);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.buddy-copy {
+  flex: 1;
+}
+
+.buddy-copy h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.buddy-copy p {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.insight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.insight-list p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: normal;
+  margin: 0;
+}
+
+.buddy-figure {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.buddy-img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+@media (max-width: 768px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analytics-page .top-header h1 {
+    font-size: 2rem;
+  }
+  
+  .buddy-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .buddy-figure {
+    width: 100px;
+  }
+}
